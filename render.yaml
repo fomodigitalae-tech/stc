@@ -1,0 +1,24 @@
+# Optional Render Blueprint — or copy these settings manually in the dashboard.
+services:
+  - type: web
+    name: stc-web
+    runtime: node
+    buildCommand: npm install && npm run build:render
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://postgres.xrgopxxtkyuncepctbbg:9%2AQq%2Fyd4FZa5uGX@aws-0-us-east-2.pooler.supabase.com:6543/postgres?pgbouncer=true
+      - key: DIRECT_URL
+        value: postgresql://postgres.xrgopxxtkyuncepctbbg:9%2AQq%2Fyd4FZa5uGX@aws-0-us-east-2.pooler.supabase.com:5432/postgres
+      - key: NEXT_PUBLIC_SUPABASE_URL
+        value: https://xrgopxxtkyuncepctbbg.supabase.co
+      - key: AUTH_SECRET
+        value: barq-cts-secret-2024-render
+      - key: PAYMENT_MODE
+        value: mock
+      - key: AIRTIME_MODE
+        value: mock
+      - key: APP_URL
+        value: https://cts-3z6m.onrender.com
